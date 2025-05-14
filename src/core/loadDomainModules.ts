@@ -4,7 +4,7 @@ import { pathToFileUrl } from "./utils/pathToFileUrl";
 import fg from "fast-glob";
 
 export async function loadDomainModules() {
-  const patterns = ["src/**/{services,repositories}/**/*.{ts,js}"];
+  const patterns = ["src/**/{services,repositories,factories,helpers,adapters}/**/*.{ts,js}"];
   const files = await fg(patterns, { absolute: true });
 
   for (const file of files) {
