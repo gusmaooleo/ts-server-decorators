@@ -12,13 +12,13 @@ export class ImagesController {
   @Middleware(imageMiddleware)
   @Get("/")
   getImage = async (req: Request, res: Response) => {
-    return res.status(200).json({ image: "image/url" })
+    return res.status(200).json({ image: this.imagesService.getAllImages() })
   }
   
   @Middleware(imageMiddleware)
   @Get("/:id")
   getByIdImage = async (req: Request, res: Response) => {
-    return res.status(200).json({ image: "image/url", id: req.params.id })
+    return res.status(200).json({ image: this.imagesService.getImage(), id: req.params.id })
   }
   
   @Post("/")
@@ -28,6 +28,6 @@ export class ImagesController {
 
   @Delete("/")
   deleteImage = async (req: Request, res: Response) => {
-    return res.status(200).json({ message: this.imagesService.getImage() })
+    return res.status(200).json({ message: "image-x-deleted" })
   }
 }

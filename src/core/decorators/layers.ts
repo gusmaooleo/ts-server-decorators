@@ -8,5 +8,8 @@ function createLayerDecorator(layerKey?: string) {
   };
 }
 
-export const Service = createLayerDecorator
-export const Repository = createLayerDecorator
+export const Service = createLayerDecorator;
+export const Repository = createLayerDecorator;
+export const Factory = createLayerDecorator;
+export const Helper = createLayerDecorator;
+export const Adapter = createLayerDecorator;

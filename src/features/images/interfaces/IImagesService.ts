@@ -1,3 +1,4 @@
 export interface IImageService {
-  getImage(): string;
+  getImage(): object;
+  getAllImages(): object[];
 }
